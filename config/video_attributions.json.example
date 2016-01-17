@@ -1,0 +1,12 @@
+[
+  {
+    "key": "author",
+    "value": "value_1",
+    "then": "person_1"
+  },
+  {
+    "key": "compressor_name",
+    "value": "value_2",
+    "then": "person_2"
+  }
+]
