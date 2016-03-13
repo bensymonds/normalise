@@ -9,6 +9,7 @@ class MediaCollection
 
   def initialize(glob)
     @media = Dir.glob(glob).map do |fn|
+      next if File.directory?(fn)
       m = nil
       TYPES.detect do |t|
         begin
@@ -18,7 +19,7 @@ class MediaCollection
         end
       end
       m || fail
-    end
+    end.compact
     validate
     disambiguate
   end
