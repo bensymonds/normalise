@@ -13,8 +13,29 @@ module Filename
     jpg
   /xi
 
+  OUTPUT = /
+  ^
+  (?<year>\d\d\d\d)
+  (?<month>\d\d)
+  (?<day>\d\d)
+  _
+  (?<hour>\d\d)
+  (?<minute>\d\d)
+  (?<second>\d\d)
+  (_\d\d)?
+  \ 
+  \[
+  [\w' ]+?
+  \]
+  (\ (?<title>.+))?
+  \.
+  (jpg|mp4|mov)
+  $
+  /xi
+
   RES = [
     WHATSAPP,
+    OUTPUT,
     /
       (IMG_|VID_|SavedImage_)?
       (?<year>\d\d\d\d)
