@@ -93,6 +93,10 @@ module Filename
     @ext ||= File.extname(filename).downcase
   end
 
+  def title
+    match[:title] if match && match.names.include?('title')
+  end
+
   def match
     (@match ||= begin
       m = nil

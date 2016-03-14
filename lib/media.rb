@@ -26,6 +26,7 @@ class Media
       format_time(best_ts),
       (additional_index ? format("_%02d", additional_index) : ""),
       (" [#{attribution[1]}]" if attribution),
+      (" #{title}" if title),
       ext.downcase,
     ].join if best_ts
   end
