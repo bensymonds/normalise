@@ -19,7 +19,7 @@ class Photo < Media
   private
 
   def exif_ts
-    exif.create_date
+    exif.create_date || exif.date_time_original
   end
 
   def suspicious?
