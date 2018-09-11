@@ -10,7 +10,7 @@ class Media
     best_filename: 30,
     index: 5,
     attr: 11,
-    sus: 5,
+    sus: 8,
     source: 11,
     filename_ts: 16,
     exif_ts: 16,
@@ -37,7 +37,7 @@ class Media
       best_filename.ljust(PADDINGS[:best_filename]),
       (additional_index ? format("%02d", additional_index) : "").ljust(PADDINGS[:index]),
       (attribution && attribution[1] || "").ljust(PADDINGS[:attr]),
-      (suspicious? ? "*" : "").ljust(PADDINGS[:sus]),
+      suspiciousness.to_s.ljust(PADDINGS[:sus]),
       (needs_rename? ? best_ts_name.to_s : "[unchanged]").ljust(PADDINGS[:source]),
       (filename_ts ? format_time(filename_ts) : "").ljust(PADDINGS[:filename_ts]),
       (exif && exif_ts ? format_time(exif_ts) : "n/a").ljust(PADDINGS[:exif_ts]),
@@ -70,6 +70,12 @@ class Media
     TS_PRIORITY.detect do |ts|
       send(ts)
     end
+  end
+
+  def suspiciousness
+    return unless filename_ts && exif_ts
+    diff = (filename_ts - exif_ts).abs.to_i
+    diff > 10 ? diff : nil
   end
 
   private
