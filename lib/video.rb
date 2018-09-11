@@ -9,10 +9,6 @@ class Video < Media
     fail "Unknown extension: #{ext}" unless EXTS.include?(ext.downcase)
   end
 
-  def suspicious?
-    false
-  end
-
   def exif
     @exif ||= begin
       MiniExiftool.new(filename)

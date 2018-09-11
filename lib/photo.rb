@@ -22,10 +22,6 @@ class Photo < Media
     exif.create_date || exif.date_time_original
   end
 
-  def suspicious?
-    filename_ts && exif_ts && (filename_ts - exif_ts).abs > 10
-  end
-
   def attribution
     @attribution ||= PhotoAttributer.new(self).attribute
   end
