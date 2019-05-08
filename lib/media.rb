@@ -69,7 +69,7 @@ class Media
   def best_ts_name
     TS_PRIORITY.detect do |ts|
       send(ts)
-    end
+    end || raise(filename)
   end
 
   def suspiciousness

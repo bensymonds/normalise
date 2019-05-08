@@ -18,7 +18,7 @@ class MediaCollection
           nil
         end
       end
-      m || fail
+      m || fail(fn)
     end.compact
     validate
     disambiguate
