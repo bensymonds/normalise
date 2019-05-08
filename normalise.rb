@@ -1,5 +1,7 @@
 require 'optparse'
 require 'byebug'
+require 'dotenv'
+Dotenv.load(File.join(__dir__, ".env"))
 require_relative 'lib/media_collection'
 
 options = {

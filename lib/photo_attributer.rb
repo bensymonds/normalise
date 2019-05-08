@@ -3,7 +3,7 @@ class PhotoAttributer
 
   def initialize(photo)
     @photo = photo
-    @config = JSON.parse(File.read(File.join(File.dirname(__FILE__), "../config/photo_attributions.json")))
+    @config = JSON.parse(File.read(ENV.fetch("PHOTO_ATTRIBUTIONS_CONFIG_FILE")))
   end
 
   def attribute
