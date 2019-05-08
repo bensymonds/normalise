@@ -11,6 +11,6 @@ class Video < Media
   private
 
   def exif_ts
-    exif.create_date
+    exif.creation_date || exif.create_date
   end
 end
