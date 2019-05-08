@@ -5,17 +5,6 @@ require_relative 'photo_attributer'
 class Photo < Media
   EXTS = %w(.jpg)
 
-  def initialize(filename)
-    @filename = filename
-    fail "Unknown extension: #{ext}" unless EXTS.include?(ext.downcase)
-  end
-
-  def exif
-    @exif ||= begin
-      MiniExiftool.new(filename)
-    end
-  end
-
   private
 
   def exif_ts

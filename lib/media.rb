@@ -17,8 +17,19 @@ class Media
     make_model: 20,
   }
 
+  def initialize(filename)
+    @filename = filename
+    fail "Unknown extension: #{ext}" unless self.class::EXTS.include?(ext.downcase)
+  end
+
   def inspect
     "#<#{self.class.name}:#{filename}>"
+  end
+
+  def exif
+    @exif ||= begin
+      MiniExiftool.new(filename)
+    end
   end
 
   def best_filename
