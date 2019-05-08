@@ -3,7 +3,7 @@ class VideoAttributer
 
   def initialize(video)
     @video = video
-    @config = JSON.parse(File.read(File.join(File.dirname(__FILE__), "../config/video_attributions.json")))
+    @config = JSON.parse(File.read(ENV.fetch("VIDEO_ATTRIBUTIONS_CONFIG_FILE")))
   end
 
   def attribute
