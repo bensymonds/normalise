@@ -7,7 +7,7 @@ class Photo < Media
 
   def initialize(filename)
     @filename = filename
-    fail "Unknown extension: #{ext}" unless EXTS.include?(ext)
+    fail "Unknown extension: #{ext}" unless EXTS.include?(ext.downcase)
   end
 
   def exif
