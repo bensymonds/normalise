@@ -2,7 +2,7 @@ require_relative 'media'
 require_relative 'video_attributer'
 
 class Video < Media
-  EXTS = %w(.mov .mp4 .3gp)
+  EXTS = %w(.mov .mp4 .3gp .avi)
 
   def initialize(filename)
     @filename = filename

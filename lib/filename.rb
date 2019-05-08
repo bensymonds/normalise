@@ -52,7 +52,7 @@ module Filename
       (_\d\d)?
       (\s\[[A-Z]+\])?
       \.
-      (jpg|mp4|mov)
+      (jpg|mp4|mov|avi)
     /xi,
     /
       (Photo|Video)\s
