@@ -84,7 +84,7 @@ class Media
   end
 
   def suspiciousness
-    return unless filename_ts && exif_ts
+    return "?" unless filename_ts && exif_ts
     diff = (filename_ts - exif_ts).abs.to_i
     diff > 10 ? diff : nil
   end
