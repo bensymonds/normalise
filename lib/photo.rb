@@ -3,7 +3,7 @@ require_relative 'media'
 require_relative 'photo_attributer'
 
 class Photo < Media
-  EXTS = %w(.jpg)
+  EXTS = %w(.jpg .jpeg)
 
   private
 
