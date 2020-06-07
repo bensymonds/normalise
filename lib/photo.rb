@@ -12,6 +12,6 @@ class Photo < Media
   end
 
   def attribution
-    @attribution ||= PhotoAttributer.new(self).attribute
+    @attribution ||= super || PhotoAttributer.new(self).attribute
   end
 end

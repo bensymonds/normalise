@@ -5,7 +5,7 @@ class Video < Media
   EXTS = %w(.mov .mp4 .3gp .avi)
 
   def attribution
-    @attribution ||= VideoAttributer.new(self).attribute
+    @attribution ||= super || VideoAttributer.new(self).attribute
   end
 
   private

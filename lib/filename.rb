@@ -25,7 +25,7 @@ module Filename
   (_\d\d)?
   \ 
   \[
-  [\w' ]+?
+  (?<attribution>[\w' ]+?)
   \]
   (\ (?<title>.+))?
   \.
@@ -95,6 +95,10 @@ module Filename
 
   def title
     match[:title] if match && match.names.include?('title')
+  end
+
+  def attribution
+    ["[unchanged]", match[:attribution]] if match && match.names.include?('attribution')
   end
 
   def match
