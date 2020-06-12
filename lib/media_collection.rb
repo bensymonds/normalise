@@ -10,6 +10,7 @@ class MediaCollection
   def initialize(glob)
     @media = Dir.glob(glob).map do |fn|
       next if File.directory?(fn)
+      next unless TYPES.flat_map { |t| t::EXTS }.include?(File.extname(fn).downcase)
       m = nil
       TYPES.detect do |t|
         begin
