@@ -7,7 +7,7 @@ class Media
 
   PADDINGS = {
     filename: 32,
-    best_filename: 30,
+    best_filename: 35,
     index: 5,
     attr: 11,
     sus: 8,
