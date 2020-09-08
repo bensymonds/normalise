@@ -9,7 +9,7 @@ class VideoAttributer
   def attribute
     hits = @config.select do |c|
       value = video.exif.send(c["key"])
-      value && value.include?(c["value"])
+      value && value.to_s.include?(c["value"])
     end
 
     fail "Ambiguous" if hits.count > 1
