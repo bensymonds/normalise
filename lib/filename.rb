@@ -48,6 +48,7 @@ module Filename
       (?<ms>\d\d\d)?
       (_Burst\d\d)?
       (_HDR)?
+      (_Bokeh)?
       (_Pano)?
       (_\d\d)?
       (\s\[[A-Z]+\])?
