@@ -66,6 +66,7 @@ module Filename
     PIXEL,
     OUTPUT,
     /
+      ^
       (IMG_|VID_|SavedImage_)?
       (?<year>\d\d\d\d)
       (?<month>\d\d)
@@ -85,6 +86,7 @@ module Filename
       (jpg|mp4|mov|avi)
     /xi,
     /
+      ^
       (Photo|Video)\s
       (?<day>\d\d)-
       (?<month>\d\d)-
@@ -97,6 +99,7 @@ module Filename
       (jpg|mov)
     /xi,
     /
+      ^
       (?<year>\d\d\d\d)-
       (?<month>\d\d)-
       (?<day>\d\d)\s
@@ -108,6 +111,7 @@ module Filename
       jpg
     /xi,
     /
+      ^
       IMG-
       (?<year>\d\d\d\d)
       (?<month>\d\d)
