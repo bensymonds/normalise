@@ -13,6 +13,17 @@ module Filename
     jpg
   /xi
 
+  WHATSAPP2 = /
+    ^
+    IMG-
+    (?<year>\d\d\d\d)
+    (?<month>\d\d)
+    (?<day>\d\d)
+    (-WA\d\d\d\d)?
+    \.
+    jpg
+  /xi
+
   OUTPUT = /
   ^
   (?<year>\d\d\d\d)
@@ -33,8 +44,26 @@ module Filename
   $
   /xi
 
+  PIXEL = /
+  ^
+  PXL_
+  (?<year>\d\d\d\d)
+  (?<month>\d\d)
+  (?<day>\d\d)
+  _
+  (?<hour>\d\d)?
+  (?<minute>\d\d)?
+  (?<second>\d\d)?
+  (?<ms>\d\d\d)?
+  (\.MP)?
+  \.
+  jpg
+  /xi
+
   RES = [
     WHATSAPP,
+    WHATSAPP2,
+    PIXEL,
     OUTPUT,
     /
       (IMG_|VID_|SavedImage_)?
