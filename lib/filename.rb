@@ -56,6 +56,7 @@ module Filename
   (?<second>\d\d)?
   (?<ms>\d\d\d)?
   (\.MP)?
+  (\.PORTRAIT)?
   \.
   jpg
   /xi
