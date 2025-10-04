@@ -57,6 +57,7 @@ module Filename
   (?<ms>\d\d\d)?
   (?<tag_mp>\.MP\b)?
   (\.PORTRAIT)?
+  (\.ORIGINAL)?
   \.
   (jpg|mp4)
   /xi
