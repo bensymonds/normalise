@@ -58,7 +58,7 @@ module Filename
   (\.MP)?
   (\.PORTRAIT)?
   \.
-  jpg
+  (jpg|mp4)
   /xi
 
   RES = [
