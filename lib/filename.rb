@@ -55,7 +55,7 @@ module Filename
   (?<minute>\d\d)?
   (?<second>\d\d)?
   (?<ms>\d\d\d)?
-  (\.MP)?
+  (?<tag_mp>\.MP\b)?
   (\.PORTRAIT)?
   \.
   (jpg|mp4)
@@ -134,6 +134,10 @@ module Filename
 
   def attribution
     ["[unchanged]", match[:attribution]] if match && match.names.include?('attribution')
+  end
+
+  def tags
+    ["MP"] if match && match.names.include?('tag_mp') && !match[:tag_mp].nil?
   end
 
   def match

@@ -38,6 +38,7 @@ class Media
       (additional_index ? format("_%02d", additional_index) : ""),
       (" [#{attribution[1]}]" if attribution),
       (" #{title}" if title),
+      ("." + tags.join(".") if tags),
       ext.downcase,
     ].join if best_ts
   end
